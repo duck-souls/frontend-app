@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import ghost from "../img/ghost.png";
 import { navLinks } from "../utils";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [clicked, setClicked] = React.useState(false);
@@ -31,12 +32,11 @@ const Navbar = () => {
           >
             {navLinks.map((link, i) => (
               <li key={i} className="px-4 sticky mb-4">
-                <a
-                  className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out"
-                  href={link.path}
-                >
-                  {link.name}
-                </a>
+                <Link to={link.path}>
+                  <div className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out">
+                    {link.name}
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>
