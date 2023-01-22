@@ -1,4 +1,4 @@
-/* */
+
 
 #navbar.active {
   right: 0px;
@@ -6,10 +6,6 @@
 
 @media screen and (max-width: 768px) {
   #navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
     position: fixed;
     top: 130px;
     right: -300px;
@@ -20,3 +16,11 @@
     transition: 0.3s ease-in-out;
   }
 }
+
+/* 
+
+right-0
+
+fixed top-32 -right-80 w-64 h-screen bg-[1b2430f5] pt-40 pl-10 transition-all transition-duration-300 transition-timing-ease-in-out
+
+*/

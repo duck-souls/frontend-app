@@ -6,7 +6,7 @@ export default function Pages() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen">
         <div className="p-10 border-2 border-black">
           <h1 className="text-4xl text-center font-extrabold pb-4">
             {" "}

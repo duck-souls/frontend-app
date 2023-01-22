@@ -25,7 +25,7 @@ export default function Navbar() {
           >
             <li className="px-4 sticky mb-4">
               <a
-                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4]"
+                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out"
                 href="index.html"
               >
                 Home
@@ -34,7 +34,7 @@ export default function Navbar() {
             <li className="px-4 sticky mb-4">
               <a
                 href="index.html"
-                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4]"
+                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out"
               >
                 About
               </a>
@@ -42,7 +42,7 @@ export default function Navbar() {
             <li className="px-4 sticky mb-4">
               <a
                 href="index.html"
-                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4]"
+                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out"
               >
                 Contact
               </a>
