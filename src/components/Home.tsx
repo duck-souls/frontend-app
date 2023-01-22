@@ -1,8 +1,8 @@
-import React from "react";
-import ghost from "./ghost.png";
+import { useState } from "react";
+import ghost from "../img/ghost.png";
 
-export default function Pages() {
-  const [mouseOver, setMouseOver] = React.useState(false);
+const Pages = () => {
+  const [mouseOver, setMouseOver] = useState(false);
 
   return (
     <>
@@ -29,4 +29,6 @@ export default function Pages() {
       </div>
     </>
   );
-}
+};
+
+export default Pages;
