@@ -1,52 +1,44 @@
 import React from "react";
 import "./Navbar.css";
-import ghost from "./ghost.png";
+import ghost from "../img/ghost.png";
+import { navLinks } from "../utils";
 
-export default function Navbar() {
+const Navbar = () => {
   const [clicked, setClicked] = React.useState(false);
 
   const handleClick = () => {
     setClicked(!clicked);
   };
 
-  console.log(clicked);
-
   return (
     <>
       <nav className="flex items-center justify-between bg-[#1b2430] p-5 ">
-        <div className="flex text-[#fff]">
-          <img src={ghost} alt="navbar ghost icon" width="90" height="60" />
+        <div className="flex text-white">
+          <img
+            src={ghost}
+            alt="navbar ghost icon"
+            className="w-[90px] w-[60px]"
+          />
           <h1 className="ml-4 text-4xl font-bold mt-4">Duck Souls</h1>
         </div>
         <div>
           <ul
-            id="navbar"
-            className={clicked ? "active" : "flex items-center justify-center"}
+            className={`${
+              clicked
+                ? "hidden"
+                : "fixed top-32 -right-80 w-64 h-screen bg-[1b2430f5] pt-40 pl-10 transition-all transition-duration-300 transition-timing-ease-in-out"
+            } `}
           >
-            <li className="px-4 sticky mb-4">
-              <a
-                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out"
-                href="index.html"
-              >
-                Home
-              </a>
-            </li>
-            <li className="px-4 sticky mb-4">
-              <a
-                href="index.html"
-                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out"
-              >
-                About
-              </a>
-            </li>
-            <li className="px-4 sticky mb-4">
-              <a
-                href="index.html"
-                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out"
-              >
-                Contact
-              </a>
-            </li>
+            {navLinks.map((link, i) => (
+              <li key={i} className="px-4 sticky mb-4">
+                <a
+                  className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4] transition-all transition-duration-300 transition-timing-ease-in-out"
+                  href={link.path}
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="md:hidden" onClick={handleClick}>
@@ -59,4 +51,6 @@ export default function Navbar() {
       </nav>
     </>
   );
-}
+};
+
+export default Navbar;
