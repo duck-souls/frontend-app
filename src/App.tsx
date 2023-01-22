@@ -1,22 +1,21 @@
 import { Route, Routes } from "react-router-dom";
 
-import HomePage from "./components/HomePage/HomePage";
+import Home from "./components/Home";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Game from "./components/Game/Game";
-import NavBar from "./components/NavBar/NavBar";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <div>
-      <NavBar />
+      <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/game" element={<Game />} />
       </Routes>
     </div>
   );
 };
-
 export default App;
