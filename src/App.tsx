@@ -1,18 +1,20 @@
+import { Route, Routes } from "react-router-dom";
+
+import HomePage from "./components/HomePage/HomePage";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Game from "./components/Game/Game";
+import NavBar from "./components/NavBar/NavBar";
+
 const App = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline text-red-600">
-        Simple React Typescript Tailwind Sample Adding something
-      </h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
+      <NavBar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/game" element={<Game />} />
+      </Routes>
     </div>
   );
 };
