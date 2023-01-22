@@ -21,13 +21,11 @@ export default function Navbar() {
         <div>
           <ul
             id="navbar"
-            className={
-              clicked ? "#navbar active" : "flex items-center justify-center"
-            }
+            className={clicked ? "active" : "flex items-center justify-center"}
           >
             <li className="px-4 sticky mb-4">
               <a
-                className="text-lg font-medium text-white transition-colors duration-300 ease-in-out hover:text-[#00bcd4] active:text-[#00bcd4]"
+                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4]"
                 href="index.html"
               >
                 Home
@@ -36,7 +34,7 @@ export default function Navbar() {
             <li className="px-4 sticky mb-4">
               <a
                 href="index.html"
-                className="text-lg font-medium text-white transition-colors duration-300 ease-in-out hover:text-[#00bcd4] active:text-[#00bcd4]"
+                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4]"
               >
                 About
               </a>
@@ -44,15 +42,19 @@ export default function Navbar() {
             <li className="px-4 sticky mb-4">
               <a
                 href="index.html"
-                className="text-lg font-medium text-white transition-colors duration-300 ease-in-out hover:text-[#00bcd4] active:text-[#00bcd4]"
+                className="text-2xl font-medium text-white hover:text-[#00bcd4] hover:underline underline-offset-8 decoration-[#00bcd4]"
               >
                 Contact
               </a>
             </li>
           </ul>
         </div>
-        <div id="mobile" onClick={handleClick}>
-          <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
+        <div className="md:hidden" onClick={handleClick}>
+          <i
+            className={`text-white text-3xl cursor-pointer ${
+              clicked ? "fas fa-times" : "fas fa-bars"
+            }`}
+          ></i>
         </div>
       </nav>
     </>

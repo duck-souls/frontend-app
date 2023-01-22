@@ -1,15 +1,7 @@
-/* ho lasciato da fate la parte responsive in tailwind */
+/* */
 
 #navbar.active {
   right: 0px;
-}
-
-#mobile {
-  display: none;
-}
-
-#mobile i {
-  color: #fff;
 }
 
 @media screen and (max-width: 768px) {
@@ -21,19 +13,10 @@
     position: fixed;
     top: 130px;
     right: -300px;
-    width: 300px;
+    width: 250px;
     height: 100vh;
     background: #1b2430f5;
     padding: 40px 0 0 10px;
     transition: 0.3s ease-in-out;
-  }
-
-  #mobile {
-    display: block;
-  }
-
-  #mobile i {
-    font-size: 24px;
-    cursor: pointer;
   }
 }
