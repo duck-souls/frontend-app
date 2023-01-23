@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between bg-[#1b2430] p-5 ">
+      <nav className="flex items-center justify-between bg-gradient-to-b from-[#0A0C0F] to-[#101820] p-5 ">
         <div className="flex text-white">
           <img
             src={ghost}
