@@ -7,7 +7,7 @@ export const navLinks = [
 export const teamMembers = [
   {
     name: "Ivonna",
-    img: require("/Users/pearl/Desktop/frontend-app/src/img/avatar/Ivonna-avatar.jpeg"),
+    img: require("images/avatar/Ivonna-avatar.jpeg"),
     role: "Frontend Developer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
@@ -15,7 +15,7 @@ export const teamMembers = [
   },
   {
     name: "Massimiliano",
-    img: require("/Users/pearl/Desktop/frontend-app/src/img/avatar/Babbu-avatar.jpeg"),
+    img: require("images/avatar/Babbu-avatar.jpeg"),
     role: "Fullstack Developer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
@@ -23,7 +23,7 @@ export const teamMembers = [
   },
   {
     name: "Patrizio",
-    img: require("/Users/pearl/Desktop/frontend-app/src/img/avatar/Patrizio-avatar.jpeg"),
+    img: require("images/avatar/Patrizio-avatar.jpeg"),
     role: "Frontend Developer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
@@ -31,7 +31,7 @@ export const teamMembers = [
   },
   {
     name: "Soehnle",
-    img: require("/Users/pearl/Desktop/frontend-app/src/img/avatar/Lupo-avatar.jpeg"),
+    img: require("images/avatar/Lupo-avatar.jpeg"),
     role: "Frontend Developer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
