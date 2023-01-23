@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <div className="mt-[120px]">
+      <div className="pt-[120px] bg-black">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/about-us" element={<AboutUs />} />
