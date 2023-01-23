@@ -2,7 +2,7 @@ import { teamMembers } from "../../utils";
 const AboutUs = () => {
   //contact us discord channel
   return (
-    <div className="bg-[url('/Users/pearl/Desktop/frontend-app/src/img/avatar/background-about-us-section/road.svg')] bg-no-repeat bg-cover">
+    <div className="bg-[url('frontend-app/src/img/avatar/background-about-us-section/road.svg')] bg-no-repeat bg-cover">
       {teamMembers.map((element, index) => {
         const { name, role, description, img, contact } = element;
         return (
