@@ -9,9 +9,9 @@ import {useState, useEffect} from "react"
 
 const App = () => {
   return (
-    <div className="pt-[120px] bg-gradient-to-t from-[#101820] to-black">
+    <div className="bg-gradient-to-t from-[#101820] to-black">
       <Navbar />
-      <div>
+      <div className="pt-[120px]">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/about-us" element={<AboutUs />} />
