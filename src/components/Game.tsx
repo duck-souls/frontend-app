@@ -31,12 +31,12 @@ const Game = () => {
               />
             ))}
           </div>
-          <div className="flex flex-col justify-center mx-auto text-white h-56 w-56">
+          <div className="flex flex-col justify-center mx-auto text-white h-56 w-56 p-3">
             {duckVisible ? (
               <img
                 src={duck}
                 alt="anatra_captcha"
-                className="mx-auto h-3/5 w-3/5 mb-4"
+                className="mx-auto h-3/5 w-3/5 mb-5"
                 onMouseOver={() => {
                   setMouseOver(true);
                   if (!heartAdded && hearth.length < 5) {
@@ -47,22 +47,20 @@ const Game = () => {
               />
             ) : (
               <p className="text-1xl text-center font-semibold">
-                PREMI MINIGIOCO "tocca l'anatra per guadagnare un cuore EXTRA"
+                PLAY MINIGAME! "touch the duck to earn an extra heart"
               </p>
             )}
             {mouseOver ? (
-              <p className="text-black text-2xl text-center font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/6">
-                BRAVO!
-              </p>
+              <p className="text-2xl text-center font-bold">GOOOD!</p>
             ) : null}
           </div>
-          <div className="flex flex-col items-center mt-5">
+          <div className="flex flex-col items-center p-5">
             <button
               className="text-black text-3xl bg-[url('../template/button.png')] bg-no-repeat bg-cover w-4/5 hover:bg-[url('../template/button_hover.png')] 
-            active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[#101820] rounded-md py-1 px-2.5 mt-5 font-bold lg:w-fit"
+            active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[#101820] py-1 px-2.5 mt-5 font-bold"
               onClick={() => setDuckVisible(true)}
             >
-              MINIGIOCO
+              MINIGAME
             </button>
             <img src={casse} alt="casse" className="h-5/6 w-5/6 mt-16" />
           </div>
