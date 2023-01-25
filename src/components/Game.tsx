@@ -1,70 +1,86 @@
 import { useState } from "react";
 import duck from "../img/duck_icon.png";
 import hearth_r from "../img/hearth_r.png";
+import casse from "../img/casse.png";
 
 const Game = () => {
   const [mouseOver, setMouseOver] = useState(false);
   const [hearth, setHearth] = useState([1, 1, 1]);
   const [duckVisible, setDuckVisible] = useState(false);
   const [heartAdded, setHeartAdded] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <div className="mx-auto my-20 bg-[#cbd5e1] border-4 h-[896px] w-[414px] border-lime-500">
-        
-        <div className="bg-[#dc2626] flex justify-between h-20">
-          <h1 className="text-2xl font-bold mt-2 ml-4">lvl1</h1>
-
+    <div className="h-[700px] relative ">
+      <div className="bg-[url('../template/sfondo-app.png')] bg-no-repeat h-[600px] w-[277px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="flex justify-between">
+          <h1 className="text-2xl font-bold mt-3 ml-5">lvl1</h1>
+          <button
+            className="fas fa-bars text-3xl font-bold mt-2 mr-4 hover:text-red-700"
+            onClick={() => setIsOpen(true)}
+          ></button>
+        </div>
+        <div className="flex justify-center">
           {hearth.map((heart, i) => (
             <img
               key={i}
               src={hearth_r}
               alt="red hearth"
-              className="w-9 h-9 mt-5"
+              className="h-1/6 w-1/6"
             />
           ))}
-          <button className="fas fa-bars w-10 h-10 text-2xl font-bold ml-4"></button>
         </div>
-        <div className=" h-80 ml-11 my-12">
-          <div className=" border-4 border-[#64748b] ring-4 ring-black h-80 w-80">
-            {duckVisible ? (
-              <img
-                src={duck}
-                alt="anatra_captcha"
-                onMouseOver={() => {
-                  setMouseOver(true);
-                  if (!heartAdded && hearth.length < 5) {
-                    setHearth([...hearth, 1]);
-                    setHeartAdded(true);
-                  }
-                }}
-                className="w-30 h-30 ml-12 mt-7"
-              />
-            ) : (
-              <p className="text-3xl text-center font-semibold pt-20">
-                PREMI MINIGIOCO "tocca l'anatra per guadagnare un cuore EXTRA"
-              </p>
-            )}
-            {mouseOver ? (
-              <p className="text-3xl text-center font-semibold pt-4">BRAVO!</p>
-            ) : null}
-          </div>
+        <div className="flex flex-col justify-center mx-auto text-white h-56 w-56">
+          {duckVisible ? (
+            <img
+              src={duck}
+              alt="anatra_captcha"
+              className="mx-auto h-3/5 w-3/5 mb-4"
+              onMouseOver={() => {
+                setMouseOver(true);
+                if (!heartAdded && hearth.length < 5) {
+                  setHearth([...hearth, 1]);
+                  setHeartAdded(true);
+                }
+              }}
+            />
+          ) : (
+            <p className="text-1xl text-center font-semibold">
+              PREMI MINIGIOCO "tocca l'anatra per guadagnare un cuore EXTRA"
+            </p>
+          )}
+          {mouseOver ? (
+            <p className="text-black text-2xl text-center font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/6">
+              BRAVO!
+            </p>
+          ) : null}
         </div>
-        <div className="grid bg-[#dc2626] place-content-center h-80">
+        <div className="flex flex-col items-center mt-5">
           <button
-            className="text-black text-3xl font-semibold p-2 border-4 border-[#64748b] ring-4 ring-black"
+            className="text-black text-3xl bg-[url('../template/button.png')] bg-no-repeat bg-cover w-4/5 hover:bg-[url('../template/button_hover.png')] 
+            active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[#101820] rounded-md py-1 px-2.5 mt-5 font-bold lg:w-fit"
             onClick={() => setDuckVisible(true)}
           >
             MINIGIOCO
           </button>
-        </div>
-        <div className="bg-white">
-          <h1 className="text-2xl text-center mt-6 bg-[#dc2626] p-10 -mt-10">
-            CASSE / FOOTER
-          </h1>
+          <img src={casse} alt="casse" className="h-5/6 w-5/6 mt-16" />
         </div>
       </div>
-    </>
+      {isOpen && (
+        <div className="h-[600px] w-[277px] bg-[url('../template/sfondo-menu.png')] bg-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="flex justify-end">
+            <button
+              className="fas fa-times fa-bars text-4xl font-bold mt-1 mr-4 hover:text-red-700"
+              onClick={() => setIsOpen(false)}
+            ></button>
+          </div>
+          <div className="flex flex-col items-center text-5xl font-bold mt-20">
+            <div className="fa-sharp fa-solid fa-gear "></div>
+            <h1 className="mt-5">Settings</h1>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
