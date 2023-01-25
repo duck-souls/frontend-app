@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed flex top-0 w-full items-center justify-between bg-gradient-to-b from-[#0A0C0F] to-[#101820] p-5">
+      <nav className="z-50 fixed flex top-0 w-full items-center justify-between bg-gradient-to-b from-[#0A0C0F] to-[#101820] p-5">
         <div className="flex text-white">
           <img src={duck} alt="navbar ghost icon" className="w-30 h-20" />
           <h1 className="ml-4 text-3xl font-bold mt-6">Duck Souls</h1>
