@@ -2,7 +2,17 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
-  },
+    extend: {
+      fontFamily: {
+        Modesto: ["Modesto", "sans-serif"],
+        Gothic: ["Gothic", "sans-serif"],
+      },
+    },
+    screens: {
+      mobile: { min: "320px", max: "550px" },
+      desktop: { min: "750px", max: "961px" },
+    },
+  
   plugins: [],
-};
+}
+}
