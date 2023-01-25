@@ -11,7 +11,7 @@ const Game = () => {
   return (
     <>
       <div className="mx-auto my-20 bg-[#cbd5e1] border-4 h-[896px] w-[414px] border-lime-500">
-        {/*  <img src='../img/sfondo-app.png' className="w-full h-full"/> */}
+        
         <div className="bg-[#dc2626] flex justify-between h-20">
           <h1 className="text-2xl font-bold mt-2 ml-4">lvl1</h1>
 
