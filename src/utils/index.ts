@@ -15,7 +15,7 @@ export const teamMembers = [
     img: ivonna,
     role: "Frontend Developer",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
     contact: "https://www.linkedin.com/in/ivonna-maturell-montalvo-a4aa8123a/",
   },
   {
