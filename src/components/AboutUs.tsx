@@ -65,7 +65,7 @@ const AboutUs = () => {
         <button
           onClick={handleClick}
           id="contact-btn"
-          className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded-lg  ml-2 hover:bg-[#AA895E] hover:text-white mb-4 mt-5 cursor-pointer"
+          className="text-xl ml-2.5 font-medium text-white mt-5 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] h-9 px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px]"
         >
           {contactUs ? "Close" : "Contact Us"}
         </button>
