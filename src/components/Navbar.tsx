@@ -48,10 +48,7 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            <button
-              className="text-xl font-medium text-white mt-5 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] h-9 px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px]
-              "
-            >
+            <button className="text-xl font-medium text-white mt-5 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px] h-fit">
               Click me
             </button>
           </ul>
