@@ -5,7 +5,8 @@ import Game from "./components/Game";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
 
-const App = () => {
+
+const App = () => { 
   return (
     <div className="bg-gradient-to-t from-[#101820] to-black">
       <Navbar />

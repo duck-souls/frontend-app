@@ -61,7 +61,7 @@ const Landing = () => {
       <h1 className="text-center font-bold lg:text-8xl lg:mt-28 lg:mb-40 mb-20 text-5xl font-Modesto">ROADMAP</h1>
         <div className="lg:grid lg:grid-cols-3 lg:gap-20 lg:h-[645px] flex flex-col ">
           {updates.map(data =>(
-            <div className="bg-[url('../template/frame.png')] bg-no-repeat bg-cover flex flex-col items-center">
+            <div className="bg-[url('../template/frame.png')] lg:h-full h-[415px] mb-10 bg-no-repeat bg-cover flex flex-col items-center">
               <h1 className="font-bold lg:text-6xl text-3xl lg:my-20 my-10 font-Modesto">{data.version}</h1>
               {data.feature.map(feature=>(
                 <li>
