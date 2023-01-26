@@ -4,6 +4,8 @@ import AboutUs from "./components/AboutUs";
 import Game from "./components/Game";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
+import {useState, useEffect} from "react"
+
 
 const App = () => {
   return (
