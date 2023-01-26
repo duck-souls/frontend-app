@@ -8,8 +8,7 @@ module.exports = {
         Gothic: ["Gothic", "sans-serif"],
       },
     },
-    
-  
-  plugins: [],
-}
-}
+
+    plugins: [],
+  },
+};

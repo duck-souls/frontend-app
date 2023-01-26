@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { teamMembers } from "../../utils";
+import { teamMembers } from "../utils/index";
 
 const AboutUs = () => {
   const [fulltName, setFulltName] = useState("");
@@ -16,9 +16,9 @@ const AboutUs = () => {
   return (
     <div
       id="about-us-section"
-      className="bg-[white] bg-no-repeat bg-cover z-[1]"
+      className="bg-gradient-to-r from-[#F4E9D9] to-[#AA895E] bg-no-repeat bg-cover z-[1]"
     >
-      <h1 className="text-center text-2xl font-black shadow-xl p-2 text-[#AA895E]">
+      <h1 className="text-center text-2xl font-black shadow-xl p-2 text-[black]">
         Our Team Members
       </h1>
       {teamMembers.map((element, index) => {
@@ -26,19 +26,21 @@ const AboutUs = () => {
         return (
           <div
             key={index}
-            className={`flex flex-1 my-10 mx-8 ${
+            className={`md:flex flex-2 my-10 mx-8 mt-7 ${
               index === 0 || index === 2 ? "justify-start" : "justify-end"
-            } mobile:grid grid-cols-1 mt-3 mb-3 justify-items-center`}
+            } grid grid-cols-1 mt-3 mb-3 justify-items-center`}
           >
             <img
               src={img}
               alt={name}
-              className="ml-6 w-60 h-56 rounded-lg shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] hover:scale-110 mobile:mb-3 mt-5 "
+              className="ml-6 w-60 h-56 rounded-lg shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] hover:scale-110 mb-3 mt-5 md:w-4/12 md:h-1/6"
             />
             <div
               className={`text-center ${
-                index === 0 || index === 2 ? "ml-4" : "ml-4"
-              } w-60 h-56 p-6 border border-black-700 rounded-lg bg-white shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] ml-6 hover:scale-110`}
+                index === 0 || index === 2
+                  ? "ml-4 mt-5 md:w-4/12 md:h-fit"
+                  : "ml-4 mt-5 md:w-4/12 md:h-fit"
+              }md:w-6/12 w-60 h-fit p-6 border border-black-700 rounded-lg bg-white shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] ml-6 hover:scale-110 `}
             >
               <h3 className="font-bold text-2xl">{name}</h3>
               <h6 className="font-semibold">{role}</h6>
@@ -57,13 +59,13 @@ const AboutUs = () => {
       })}
       <div className=""></div>
       <div className="flex flex-1 justify-center">
-        <h3 className="text-center text-2xl mb-3 mt-5 font-semibold text-[#AA895E]">
+        <h3 className="text-center text-2xl mb-3 mt-5 font-semibold text-[white]">
           Questions?
         </h3>
         <button
           onClick={handleClick}
           id="contact-btn"
-          className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded-lg  ml-2 hover:bg-[#AA895E] hover:text-white mb-4 mt-5 cursor-pointer"
+          className="text-xl ml-2.5 font-medium text-white mt-5 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] h-9 px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px]"
         >
           {contactUs ? "Close" : "Contact Us"}
         </button>
@@ -71,7 +73,7 @@ const AboutUs = () => {
       {contactUs ? (
         <div
           id="contact"
-          className="bg-white h-1/4 w-9/12 m-4 border border-black-700 p-5 rounded-lg shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] ml-11 desktop:w-fit grid grid-cols-1 w-"
+          className="bg-white h-1/4 w-9/12 m-4 border border-black-700 p-5 rounded-lg shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] ml-11 grid grid-cols-1"
         >
           <div>
             <p className="">Get in touch!</p>
