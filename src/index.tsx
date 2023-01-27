@@ -5,13 +5,15 @@ import "./index.css";
 import "./fonts/modesto-condensed-bold.ttf"
 import App from "./App";
 
+
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+<React.StrictMode>
     <Router>
       <App />
     </Router>
-  </React.StrictMode>
+  </React.StrictMode> 
 );

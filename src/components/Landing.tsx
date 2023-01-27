@@ -1,9 +1,12 @@
 import duck from "../img/ducksouls.jpg";
 import duck2 from "../img/ducksouls1.png";
-
+import Context, {contextType}  from "../components/Context"
 import border from "../img/border.png"
+import { useContext } from "react";
 
-const Landing = () => {
+
+const Landing: React.FC = () => {
+  const contextValue = useContext<contextType>(Context)
   const updates = [{
     version:"Version: 1.0",
     feature:["lorem", "ipsum", "dolor"]
@@ -32,9 +35,9 @@ const Landing = () => {
             eu elementum at, sollicitudin ut eros. Vivamus non cursus enim, sit
             amet finibus erat. Nullam commodo fermentum augue sit amet volutpat.
           </p>
-          <button className="bg-[url('../template/button.png')] bg-no-repeat bg-cover hover:bg-[url('../template/button_hover.png')] 
+          <button onClick={contextValue.toggle} className="bg-[url('../template/button.png')] bg-no-repeat bg-cover hover:bg-[url('../template/button_hover.png')] 
             active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[white] lg:mr-auto py-1 px-2.5 mt-5 font-Gothic lg:w-fit h-[34px]">
-            COMING SOON
+            flippalo:{contextValue.state ? "True" : "False"}
           </button>
         </div>
         <img
