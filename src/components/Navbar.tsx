@@ -3,9 +3,12 @@ import { useEffect } from "react";
 import { navLinks } from "../utils";
 import { Link } from "react-router-dom";
 import duck from "../img/duck_icon.png";
-//text-xl font-medium text-white mt-5 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] h-9 px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px]
-const Navbar = () => {
+import { contextType, Context } from "../context/ContextProvider";
+import { useContext } from "react";
+
+const Navbar: React.FC = () => {
   const [clicked, setClicked] = useState(false);
+  const { state, toggle } = useContext<contextType>(Context);
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -26,10 +29,18 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="z-50 fixed flex top-0 w-full items-center justify-between bg-gradient-to-b from-[#0A0C0F] to-[#101820] p-5">
-        <div className="flex text-white">
+      <nav
+        className={`z-50 fixed flex top-0 w-full items-center justify-between p-5 ${
+          state
+            ? "bg-gradient-to-b from-[#0A0C0F] to-[#101820]"
+            : "bg-[url('https://media.tenor.com/J337jYO8hQ8AAAAC/gnomed-gnome.gif')]"
+        }`}
+      >
+        <div className="flex">
           <img src={duck} alt="navbar ghost icon" className="w-30 h-20" />
-          <h1 className="ml-4 text-3xl font-bold mt-6">Duck Souls</h1>
+          <h1 className="ml-4 text-3xl font-bold mt-6 text-white">
+            Duck Souls
+          </h1>
         </div>
         <div>
           <ul
@@ -49,11 +60,10 @@ const Navbar = () => {
               </li>
             ))}
             <button
-              className="text-xl font-medium text-white mt-5 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] h-9 px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px]
+              onClick={toggle}
+              className="fa-solid fa-lightbulb text-xl font-medium text-white mt-5 ml-3 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] h-9 px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px]
               "
-            >
-              Click me
-            </button>
+            ></button>
           </ul>
         </div>
         <div className="sm:hidden" onClick={handleClick}>
