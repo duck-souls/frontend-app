@@ -9,7 +9,7 @@ import ContextProvider from "./context/ContextProvider";
 const App: React.FC = () => {
   return (
     <ContextProvider>
-      <div className="bg-gradient-to-t from-[#101820] to-black">
+      <div className=" from-[#101820] to-black">
         <Navbar />
         <div className="pt-[120px]">
           <Routes>
