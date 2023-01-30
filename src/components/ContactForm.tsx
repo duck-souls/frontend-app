@@ -6,7 +6,7 @@ const ContactForm = ({setContactUs}) => {
   const [email, setEmail] = useState("");
     return (
         <div
-          className="bg-white mx-1.5 border border-black-700 p-5 rounded-lg shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] ml-11 grid grid-cols-1 relative top-[-1000px] right-[20px] w-11/12 h-full"
+          className="bg-white mx-1.5 border border-black-700 p-5 rounded-lg shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] ml-11 grid grid-cols-1 relative top-[-450px] right-[20px] w-11/12 h-full"
         >
           <div className="flex justify-between mb-2.5">
               <div>
