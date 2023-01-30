@@ -6,7 +6,7 @@ const ContactForm = ({setContactUs}) => {
   const [email, setEmail] = useState("");
     return (
         <div
-          className="bg-white mx-2.5 border border-black-700 p-5 rounded-lg shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] mr-1.5 grid grid-cols-1 fixed top-[20%] w-11/12 h-fit"
+          className="bg-white ml-20 border border-black-700 p-5 rounded-lg shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] grid grid-cols-1 fixed top-[20%] w-9/12 h-fit md:w-5/12 md:left-[20%]"
         >
           <div className="flex justify-between mb-2.5">
               <div>
@@ -46,10 +46,10 @@ const ContactForm = ({setContactUs}) => {
 
           <input
             type="submit"
-            className=" m-4 text-center border border-black-700 py-1 px-2 bg-[#F4E9D9] rounded hover:bg-[#AA895E] hover:text-white cursor-pointer"
+            className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded hover:bg-[#AA895E] hover:text-white mb-4 mt-6 cursor-pointer"
           />
           <div className="text-center border-t-2"></div>
-          <div className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded-lg hover:bg-[#AA895E] hover:text-white mb-4 mt-6 cursor-pointer">
+          <div className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded hover:bg-[#AA895E] hover:text-white mb-4 mt-6 cursor-pointer">
             <a href="#">Join Us On Discord</a>
           </div>
           <div>
