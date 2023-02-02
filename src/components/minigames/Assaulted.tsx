@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-const Rust = () => {
-  const [rust, setRust] = useState([0, 0, 0, 1, 1, 1, 1, 1, 1]);
+const Assaulted = (props) => {
+  const [assaulted, setAssaulted] = useState([0, 0, 0, 1, 1, 1, 1, 1, 1]);
+  console.log(props);
 
   const shuffle = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -12,25 +13,25 @@ const Rust = () => {
   };
 
   const handleClick = (i) => {
-    const newRust = [...rust];
-    if (newRust[i] === 0) {
-      newRust[i] = 1;
-      setRust(newRust);
+    const newAssaulted = [...assaulted];
+    if (newAssaulted[i] === 0) {
+      newAssaulted[i] = 1;
+      setAssaulted(newAssaulted);
     }
-    if (!newRust.includes(0)) {
-      console.log("BRAVO");
+    if (!newAssaulted.includes(0)) {
+      props.fine(true);
     }
   };
 
   return (
-    <div className="w-[310px] h-[310px] bg-[url('../template/sfondo_minigioco_bandit.png')] bg-cover mx-auto mt-4 p-2">
+    <div className="w-[310px] h-[310px] mx-auto mt-4 p-2 bg-[url('../template/sfondo_minigioco_bandit.png')] bg-cover">
       <div className="grid grid-cols-3 ml-2 mt-7">
-        {shuffle(rust).map((value, i) => (
+        {shuffle(assaulted).map((value, i) => (
           <button
             key={i}
             onClick={() => handleClick(i)}
             disabled={value === 1}
-            className={`m-1 border-2 border-black w-[82px] h-[82px] ${
+            className={`m-1 w-[82px] h-[82px] ${
               !value
                 ? "bg-[url('../template/bandit.png')] active:bg-[url('../template/bandit_death.png')]"
                 : ""
@@ -42,6 +43,4 @@ const Rust = () => {
   );
 };
 
-export default Rust;
-
-// active:bg-[url('bg-[url('../template/bandit_death.png')]
+export default Assaulted;
