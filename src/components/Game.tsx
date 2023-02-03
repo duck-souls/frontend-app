@@ -3,6 +3,7 @@ import hearth_r from "../img/hearth_r.png";
 import hearth_g from "../img/hearth_g.png";
 import casse from "../img/casse.png";
 import Rust from "./Rust";
+import Minigame2 from "./Minigame2";
 
 const Game = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,13 +56,13 @@ const Game = () => {
               </div>
             </div>
             <div className="mr-1 mb-4 ml-1 lg:ml-0">
-              <Rust />
+              <Minigame2 />
             </div>
           </div>
 
           <div className="flex flex-col items-center lg:mt-0 mt-8 w-[416px] h-[450px] lg:w-[450px] lg:h-[416px]">
             <button
-              className="mt-10 text-black text-3xl bg-[url('../template/button.png')] bg-no-repeat bg-cover w-4/5 hover:bg-[url('../template/button_hover.png')] 
+              className="mt-10 text-black bg-[url('../template/button.png')] bg-no-repeat bg-cover w-4/5 hover:bg-[url('../template/button_hover.png')] 
             active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[#101820] mr-3 lg:py-6 py-5 px-10 font-bold"
             >
               MINIGAME
