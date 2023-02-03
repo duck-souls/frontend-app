@@ -24,13 +24,14 @@ const playAgain = () => {
 const checkWinner = () => {
  
     if (progressBarDuck === 0) {
-      setCompleted(!false)
       setWinner("Adversary")
+      setCompleted(!false)
     } 
     else if (progressBarArdv === 0) {
-     setCompleted(!false)
       setWinner("Duck") 
+      setCompleted(!false)
     } 
+    displayWinner()
   
 }
 const advPlay = () => {
@@ -66,9 +67,9 @@ const total = percent[random]
 }
   
 const displayWinner = () => {
-  if (completed && winner) {
+  if (completed) {
     return `The winner is ${winner}!`
-  } else {
+  } else if (progressBarArdv === 0 && progressBarDuck === 0) {
     return "Game Over!!"
   }
 }
