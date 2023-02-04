@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-const Assaulted = (props) => {
+const Assaulted = ({ setGameEndProps }) => {
   const [assaulted, setAssaulted] = useState([0, 0, 0, 1, 1, 1, 1, 1, 1]);
-  console.log(props);
 
   const shuffle = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -19,12 +18,12 @@ const Assaulted = (props) => {
       setAssaulted(newAssaulted);
     }
     if (!newAssaulted.includes(0)) {
-      props.fine(true);
+      setGameEndProps(true);
     }
   };
 
   return (
-    <div className="w-[310px] h-[310px] mx-auto mt-4 p-2 bg-[url('../template/sfondo_minigioco_bandit.png')] bg-cover">
+    <div className="w-[310px] h-[310px] mx-auto mt-4 p-2 bg-[url('../template/background_minigame_bandit.png')] bg-cover">
       <div className="grid grid-cols-3 ml-2 mt-7">
         {shuffle(assaulted).map((value, i) => (
           <button

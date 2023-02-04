@@ -1,4 +1,4 @@
-const Lost = (props) => {
+const Lost = ({ setGameEndProps }) => {
   const random = Math.random() >= 0.5;
   const left = random;
   const right = !left;
@@ -8,17 +8,17 @@ const Lost = (props) => {
 
   const handleLeftClick = () => {
     if (left) {
-      props.fine(true);
+      setGameEndProps(true);
     } else {
-      console.log("coglione");
+      console.log("wrong");
     }
   };
 
   const handleRightClick = () => {
     if (right) {
-      props.fine(true);
+      setGameEndProps(true);
     } else {
-      console.log("coglione");
+      console.log("wrong");
     }
   };
 
@@ -27,8 +27,8 @@ const Lost = (props) => {
       <div
         className={`h-[310px] w-[310px] mx-auto mt-4 p-2 border-black ${
           left
-            ? "bg-[url('../template/sfondo_minigioco_lost.png')] scale-x-[-1] bg-cover"
-            : "bg-[url('../template/sfondo_minigioco_lost.png')] bg-cover"
+            ? "bg-[url('../template/background_minigame_lost.png')] scale-x-[-1] bg-cover"
+            : "bg-[url('../template/background_minigame_lost.png')] bg-cover"
         }`}
       ></div>
       <div className="flex justify-between text-white">

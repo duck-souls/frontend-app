@@ -5,6 +5,7 @@ import Game from "./components/Game";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
 import ContextProvider from "./context/ContextProvider";
+import Items from "./components/Items";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <div className="pt-[120px]">
           <Routes>
             <Route path="/" element={<Landing />} />
+            <Route path="/items" element={<Items />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/game" element={<Game />} />
             <Route path="/mint" element={<Landing />} />

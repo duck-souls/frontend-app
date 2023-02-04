@@ -5,8 +5,9 @@ import lupo from "../img/avatar/Lupo-avatar.jpeg";
 
 export const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about-us" },
+  { name: "Items", path: "/items" },
   { name: "Game", path: "/game" },
+  { name: "About", path: "/about-us" },
 ];
 
 export const teamMembers = [
