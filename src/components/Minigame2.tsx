@@ -46,41 +46,46 @@ const checkWinner = useCallback(() => {
   
 }, [progressBarArdv, progressBarDuck, displayWinner])
 
-const advPlay = useCallback(() => {
+useEffect(() => {
+  if (attack === false) {
+    const random = Math.floor(Math.random() * percent.length)
+    const total = percent[random]
+    const timeout = setTimeout(() => {
+      setProgressBarDuck(prev => prev - total) 
+      if (total > progressBarDuck) {
+        setProgressBarDuck(0)
+        setCompleted(!false)
+        setMode("playAgain")
+      } else {
   
-  const random = Math.floor(Math.random() * percent.length)
-  const total = percent[random]
-  const timeout = setTimeout(() => {
-    setProgressBarDuck(prev => prev - total) 
-    setAttack(!true)//
-    if (total > progressBarDuck) {
-      setProgressBarDuck(0)
-      setCompleted(!false)
-      setMode("playAgain")
-    }
-    return clearTimeout(timeout)
-  }, 2000) 
-}, [percent, progressBarDuck])
+        setAttack(true)
+      }
+  
+      return clearTimeout(timeout)
+    }, 2000) 
+
+  }
+}, [attack])
       
 const handleClick = useCallback((x:any) => {
 const random = Math.floor(Math.random() * percent.length)
 const total = percent[random]
    setProgressBarArdv(x - total)
-   setAttack(true)//
   if (total > x) {
     setProgressBarArdv(0)
     setCompleted(!false)
     setMode("playAgain")
+  } else {
+    setAttack(false)
   }
-  return advPlay()
-}, [advPlay, percent])
+}, [ percent])
   
 
 useEffect(() => {
 if (winner) return
   checkWinner()
   displayWinner()
-}, [advPlay, handleClick, winner,checkWinner, displayWinner])
+}, [handleClick, winner, checkWinner, displayWinner])
 
 
 
@@ -96,7 +101,7 @@ return (
      <div>
        <div  className="w-20 mb-4 flex"><img src={duck} alt=""/></div>
        <div className={`rounded-full bg-[#AA895E]  h-5 text-white text-sm mb-7 ${progressBarDuck === 100 ? "w-full" : progressBarDuck === 75 ? "w-3/6" : progressBarDuck === 50 ? "w-1/3 bg-yellow-600" : progressBarDuck === 25 ? "w-1/5 bg-amber-700" : "w-2 bg-rose-700"} `}>{progressBarDuck}%</div>
-       <div onClick={() =>handleClick(progressBarArdv)} className={`w-20 mb-4 cursor-pointer`}><img src={duck2} alt="" /></div>
+       <div onClick={() =>handleClick(progressBarArdv)} className={`w-20 mb-4 cursor-pointer ${attack ? "cursor-pointer" : "opacity-60 cursor-none"}`}><img src={duck2} alt="" /></div>
        <div className={`rounded-full bg-[#AA895E]  h-5 text-white text-sm ${progressBarArdv === 100 ? "w-full" : progressBarArdv === 75 ? "w-3/6" : progressBarArdv === 50 ? "w-1/3 bg-yellow-600" : progressBarArdv === 25 ? "w-1/5 bg-amber-700" : "w-2 bg-rose-700"}`}>{progressBarArdv}%</div>
      </div>
   }
