@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
       >
         <div className="flex">
           <img src={duck} alt="navbar ghost icon" className="w-30 h-20" />
-          <h1 className="ml-4 text-3xl font-bold mt-6 text-white">
+          <h1 className="ml-4 text-4xl font-bold mt-4 text-white font-Modesto">
             Duck Souls
           </h1>
         </div>
@@ -51,9 +51,9 @@ const Navbar: React.FC = () => {
             }`}
           >
             {navLinks.map((link, i) => (
-              <li key={i} className="px-4 sticky mb-4">
+              <li key={i} className="px-3 sticky mb-4">
                 <Link to={link.path}>
-                  <div className="text-xl font-medium text-white mt-6 hover:text-[#FEE715] hover:underline underline-offset-8 decoration-[#FEE715] transition-all transition-duration-300 transition-timing-ease-in-out">
+                  <div className="text-l font-Gothic font-bold text-white mt-6 hover:text-[#FEE715] hover:underline underline-offset-8 decoration-[#FEE715] transition-all transition-duration-300 transition-timing-ease-in-out">
                     {link.name}
                   </div>
                 </Link>

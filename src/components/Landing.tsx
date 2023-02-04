@@ -4,6 +4,12 @@ import duck2 from "../img/ducksouls1.png";
 import border from "../img/border.png";
 
 const Landing = (props) => {
+  const randomCibo = () => {
+    const cibo = ["asd", "lol", "rofl"];
+    const ciboRandomizer = Math.floor(Math.random() * cibo.length);
+    console.log(cibo[ciboRandomizer]);
+  };
+
   const updates = [
     {
       version: "Version: 1.0",
@@ -35,6 +41,7 @@ const Landing = (props) => {
             amet finibus erat. Nullam commodo fermentum augue sit amet volutpat.
           </p>
           <button
+            onClick={randomCibo}
             className="bg-[url('../template/button.png')] bg-no-repeat bg-cover hover:bg-[url('../template/button_hover.png')] 
             active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[white] lg:mr-auto py-1 px-2.5 mt-5 font-Gothic lg:w-fit h-[34px]"
           >
@@ -67,7 +74,7 @@ const Landing = (props) => {
         </h1>
         <div className="lg:grid lg:grid-cols-3 lg:gap-20 lg:h-[645px] flex flex-col ">
           {updates.map((data) => (
-            <div className="bg-[url('../template/frame.png')] lg:h-full h-[415px] mb-10 bg-no-repeat bg-cover flex flex-col items-center">
+            <div className="bg-[url('../template/frame.png')]  lg:max-h-[555px] mb-10 bg-center bg-no-repeat bg-contain flex flex-col items-center">
               <h1 className="font-bold lg:text-6xl text-3xl lg:my-20 my-10 font-Modesto">
                 {data.version}
               </h1>
