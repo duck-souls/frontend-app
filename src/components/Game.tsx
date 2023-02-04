@@ -84,7 +84,7 @@ const Game = () => {
                   </div>
                 </div>
               )}
-              {minigameVisible && <RandomGame />}
+              {minigameVisible && <Home />}
               {/* 
               METTI IL COMPONENT DEL MINIGIOCO CHE VUOI VISUALIZZARE O RANDOM PER UNO A CASO
               <RandomGame/> <Assaulted /> <Lost /> <Feed /> <DragDrop /> <Home />*/}
@@ -121,13 +121,3 @@ const Game = () => {
 };
 
 export default Game;
-
-/* lg:bg-[url('../template/background_app_desktop.png')] h-[900px] w-[416px] bg-[url('../template/background_app_mobile.png')] bg-cover
-
-
-lg:bg-[url('../template/background_settings_desktop')] h-[900px] w-[416px] bg-[url('../template/background_settings_mobile')] bg-cover 
-
-
-lg:bg-[url('../template/background_settings_desktop.png')] h-[900px] w-[416px] bg-[url('../template/background_settings_mobile.png')] bg-cover
-
-*/
