@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import duck from "../img/ducksouls.jpg";
 import duck2 from "../img/ducksouls1.png";
 
@@ -8,72 +8,82 @@ const [mode, setMode] = useState("start");
 const [progressBarDuck, setProgressBarDuck] = useState(100)
 const [progressBarArdv ,setProgressBarArdv] = useState(100)
 const [completed, setCompleted] = useState(false)
-const [attack, setAttack] = useState(false)
+const [attack, setAttack] = useState(true)//
 const [winner, setWinner] = useState("")
+
+const percent = [75, 50, 25, 0]
 
 const playAgain = () => {
   setMode("start")
   setProgressBarArdv(100)
   setProgressBarDuck(100)
   setCompleted(false)
-  setAttack(false)
+  setAttack(true)//
   setWinner("")
 }
 
+const displayWinner = useCallback(() => {
+  if (completed) {
+    return `The winner is ${winner}!`
+  } 
+}, [completed, winner])
 
-const checkWinner = () => {
+const checkWinner = useCallback(() => {
+  if (progressBarDuck === 0) {
+    setProgressBarDuck(0)
+    setWinner("Adversary")
+    setCompleted(!false)
+    setMode("playAgain")
+  } 
+  else if (progressBarArdv === 0) {
+    setProgressBarArdv(0)
+    setWinner("Duck") 
+    setCompleted(!false)
+    setMode("playAgain")
+  } 
  
-    if (progressBarDuck === 0) {
-      setWinner("Adversary")
-      setCompleted(!false)
-    } 
-    else if (progressBarArdv === 0) {
-      setWinner("Duck") 
-      setCompleted(!false)
-    } 
     displayWinner()
   
-}
-const advPlay = () => {
-  let percent = [75, 50, 25, 0]
+}, [progressBarArdv, progressBarDuck, displayWinner])
+
+const advPlay = useCallback(() => {
+  
   const random = Math.floor(Math.random() * percent.length)
   const total = percent[random]
-  setTimeout(() => {
-    if (winner) return
+  const timeout = setTimeout(() => {
     setProgressBarDuck(prev => prev - total) 
+    setAttack(!true)//
     if (total > progressBarDuck) {
       setProgressBarDuck(0)
       setCompleted(!false)
-      checkWinner()
       setMode("playAgain")
     }
-  }, 2000)
-}
+    return clearTimeout(timeout)
+  }, 2000) 
+}, [percent, progressBarDuck])
       
-const handleClick = (x:any) => {
-  let percent = [75, 50, 25, 0]
+const handleClick = useCallback((x:any) => {
 const random = Math.floor(Math.random() * percent.length)
 const total = percent[random]
-  setAttack(!false)
-  if (winner) return
    setProgressBarArdv(x - total)
+   setAttack(true)//
   if (total > x) {
     setProgressBarArdv(0)
     setCompleted(!false)
-    checkWinner()
     setMode("playAgain")
   }
   return advPlay()
-}
+}, [advPlay, percent])
   
-const displayWinner = () => {
-  if (completed) {
-    return `The winner is ${winner}!`
-  } else if (progressBarArdv === 0 && progressBarDuck === 0) {
-    return "Game Over!!"
-  }
-}
-//console.log(winner)
+
+useEffect(() => {
+if (winner) return
+  checkWinner()
+  displayWinner()
+}, [advPlay, handleClick, winner,checkWinner, displayWinner])
+
+
+
 return (
 <div className="w-[310px] h-[310px] mx-auto mt-4 p-2 border-2"> 
   {mode === "start" && <div
@@ -84,9 +94,9 @@ return (
             </div>}
   {mode === "battle" && 
      <div>
-       <div onClick={() =>handleClick(progressBarArdv)} className="w-20 cursor-pointer mb-4 flex"><img src={duck} alt=""/></div>
+       <div  className="w-20 mb-4 flex"><img src={duck} alt=""/></div>
        <div className={`rounded-full bg-[#AA895E]  h-5 text-white text-sm mb-7 ${progressBarDuck === 100 ? "w-full" : progressBarDuck === 75 ? "w-3/6" : progressBarDuck === 50 ? "w-1/3 bg-yellow-600" : progressBarDuck === 25 ? "w-1/5 bg-amber-700" : "w-2 bg-rose-700"} `}>{progressBarDuck}%</div>
-       <div className="w-20 mb-4"><img src={duck2} alt="" /></div>
+       <div onClick={() =>handleClick(progressBarArdv)} className={`w-20 mb-4 cursor-pointer`}><img src={duck2} alt="" /></div>
        <div className={`rounded-full bg-[#AA895E]  h-5 text-white text-sm ${progressBarArdv === 100 ? "w-full" : progressBarArdv === 75 ? "w-3/6" : progressBarArdv === 50 ? "w-1/3 bg-yellow-600" : progressBarArdv === 25 ? "w-1/5 bg-amber-700" : "w-2 bg-rose-700"}`}>{progressBarArdv}%</div>
      </div>
   }
