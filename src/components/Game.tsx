@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import hearth_r from "../img/hearth_r.png";
 import hearth_g from "../img/hearth_g.png";
 import chest from "../img/chest.png";
+import Minigame2 from "./minigames/Minigame2";
 import Assaulted from "./minigames/Assaulted";
 import Lost from "./minigames/Lost";
 import Feed from "./minigames/Feed";
@@ -39,6 +40,7 @@ const Game = () => {
       <Feed setGameEndProps={setGameEnd} />,
       <Lost setGameEndProps={setGameEnd} />,
       <Home />,
+      <Minigame2 />,
     ];
     const randomIndex = Math.floor(Math.random() * componentsArray.length);
     const randomChild = componentsArray[randomIndex];
