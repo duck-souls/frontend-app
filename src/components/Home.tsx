@@ -8,15 +8,14 @@ const Home = () => {
       <div className="relative mt-14">
         <img
           src={duck}
-          className="absolute bottom-0 left-16 animate-[walk_11s_infinite]"
+          className="absolute -bottom-4 left-16 animate-[walk_11s_infinite]"
         ></img>
-        <div className="flex justify-between border-4">
+        <div className="flex justify-between">
           <div className="">
             <img
               className="hover:scale-125"
               src={ItemsList.mithril?.helm.tier2.image}
             />
-
             <img
               className="mt-2 hover:scale-125"
               src={ItemsList.mithril?.armor.tier2.image}
@@ -34,7 +33,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-[290px] h-[80px] bg-[url('../template/text_button.png')] mt-8">
+      <div className="w-[290px] h-[80px] bg-[url('../template/text_button.png')] mt-10">
         <div className="text-white text-center text-2xl font-bold"></div>
       </div>
     </div>

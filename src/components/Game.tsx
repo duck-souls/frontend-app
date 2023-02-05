@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import hearth_r from "../img/hearth_r.png";
 import hearth_g from "../img/hearth_g.png";
 import chest from "../img/chest.png";
-import Minigame2 from "./minigames/Minigame2";
+import Dungeon from "./minigames/Dungeon";
 import Assaulted from "./minigames/Assaulted";
 import Lost from "./minigames/Lost";
 import Feed from "./minigames/Feed";
 import Home from "./Home";
+import Trouble from "./minigames/Trouble";
 
 const Game = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@ const Game = () => {
       <Feed setGameEndProps={setGameEnd} />,
       <Lost setGameEndProps={setGameEnd} />,
       <Home />,
-      <Minigame2 />,
+      <Dungeon />,
     ];
     const randomIndex = Math.floor(Math.random() * componentsArray.length);
     const randomChild = componentsArray[randomIndex];
@@ -82,14 +83,20 @@ const Game = () => {
               {!minigameVisible && (
                 <div className="flex h-[310px] w-[310px] mx-auto mt-4 p-2">
                   <div className="text-white text-center my-auto text-4xl font-Gothic mr-1">
-                    {!gameEnd ? "Click MINIGAME to START it" : "BRAVO"}
+                    {!gameEnd ? (
+                      "Click MINIGAME to START it"
+                    ) : (
+                      <div className="-mt-8 -ml-4 p-2">
+                        <Home />
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
-              {minigameVisible && <Home />}
+              {minigameVisible && <Home /> }
               {/* 
               METTI IL COMPONENT DEL MINIGIOCO CHE VUOI VISUALIZZARE O RANDOM PER UNO A CASO
-              <RandomGame/> <Assaulted /> <Lost /> <Feed /> <DragDrop /> <Home />*/}
+              <RandomGame/> <Assaulted /> <Lost /> <Feed /> <DragDrop /> <Home /> <Dungeon /> <Trouble />*/}
             </div>
           </div>
           <div className="flex flex-col items-center lg:mt-0 mt-8 w-[416px] h-[450px] lg:w-[450px] lg:h-[416px]">
@@ -99,7 +106,7 @@ const Game = () => {
               className="mt-10 text-black text-3xl bg-[url('../template/button.png')] bg-no-repeat bg-cover w-4/5 hover:bg-[url('../template/button_hover.png')] 
             active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[#101820] mr-3 lg:py-6 py-5 px-10 font-bold font-Modesto"
             >
-              {!gameEnd ? "MINIGAME" : "..."}
+              {!gameEnd ? "MINIGAME" : "Looking for TROUBLE 3/5"}
             </button>
             <img src={chest} alt="casse" className="h-70 w-80 mt-8" />
           </div>
