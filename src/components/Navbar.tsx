@@ -65,11 +65,6 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
             ))}
-            <button
-              onClick={toggle}
-              className="fa-solid fa-lightbulb text-xl font-medium text-white mt-5 ml-3 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] h-9 px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px]
-              "
-            ></button>
           </ul>
         </div>
         <div className="sm:hidden" onClick={handleClick}>
