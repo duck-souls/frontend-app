@@ -22,16 +22,40 @@ interface childrenProps {
 
 const CONTRACT_ADDRESS = "0x9473c284b40710c08D73f67bd346554620B7103c";
 
-const rpcUrl = "https://filecoin-hyperspace.chainstacklabs.com/rpc/v1";
+// const rpcUrl = "https://filecoin-hyperspace.chainstacklabs.com/rpc/v1";
+// const injected = injectedModule();
+
+// init({
+//   wallets: [injected],
+//   chains: [
+//     {
+//       id: "3141",
+//       token: "tFIL",
+//       label: "Filecoin Hyperspace",
+//       rpcUrl,
+//     },
+//   ],
+//   accountCenter: {
+//     desktop: {
+//       enabled: false,
+//     },
+//     mobile: {
+//       enabled: false,
+//     },
+//   },
+// });
+
+const rpcUrl =
+  "https://polygon-mumbai.g.alchemy.com/v2/SeyWmSZubocxNcqaWaiR--xe00RiT1ig";
 const injected = injectedModule();
 
 init({
   wallets: [injected],
   chains: [
     {
-      id: "3141",
-      token: "tFIL",
-      label: "Filecoin Hyperspace",
+      id: "0x13881",
+      token: "MATIC",
+      label: "Polygon Mumbai",
       rpcUrl,
     },
   ],
@@ -78,16 +102,16 @@ const ContextProvider: React.FC<childrenProps> = ({ children }) => {
   }, [provider]);
 
   useEffect(() => {
-    if (!signer || connectedChain?.id !== "3141") return;
+    if (!signer || connectedChain?.id !== "0x13881") return;
     const diamond = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
 
     setDiamond(diamond);
   }, [signer, connectedChain]);
 
   useEffect(() => {
-    if ((wallet || signer || userAddress) && connectedChain?.id !== "3141") {
+    if ((wallet || signer || userAddress) && connectedChain?.id !== "0x13881") {
       try {
-        setChain({ chainId: "3141" });
+        setChain({ chainId: "0x13881" });
       } catch (error) {
         console.log(error);
       }
@@ -102,3 +126,8 @@ const ContextProvider: React.FC<childrenProps> = ({ children }) => {
 };
 
 export default ContextProvider;
+
+// const register = async () => {
+//   const tx = await diamond.startRegister();
+//   await tx.wait();
+// };
