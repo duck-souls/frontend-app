@@ -10,8 +10,8 @@ const ContactForm = ({setContactUs}) => {
         >
           <div className="flex justify-between mb-2.5">
               <div>
-            <p className="">Get in touch!</p>
-            <p className="">We'd love to hear from you.</p>
+            <p className="font-Gothic">Get in touch!</p>
+            <p className="font-Gothic">We'd love to hear from you.</p>
             </div>
             <div onClick={() => setContactUs(false)} className="bg-[#F4E9D9] w-5 h-6 text-center rounded hover:bg-[#AA895E] hover:text-[white] cursor-pointer">X</div>
           </div>
@@ -46,15 +46,15 @@ const ContactForm = ({setContactUs}) => {
 
           <input
             type="submit"
-            className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded hover:bg-[#AA895E] hover:text-white mb-4 mt-6 cursor-pointer"
+            className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded hover:bg-[#AA895E] hover:text-white mb-4 mt-6 cursor-pointer font-Gothic"
           />
           <div className="text-center border-t-2"></div>
-          <div className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded hover:bg-[#AA895E] hover:text-white mb-4 mt-6 cursor-pointer">
+          <div className="text-center border border-black-700 py-1.5 px-2.5 bg-[#F4E9D9] rounded hover:bg-[#AA895E] hover:text-white mb-4 mt-6 cursor-pointer font-Gothic">
             <a href="#">Join Us On Discord</a>
           </div>
           <div>
             <input type="checkbox" className="mr-1 cursor-pointer" />
-            <label htmlFor="checkbox" className="text-xs">
+            <label htmlFor="checkbox" className="text-xs font-Gothic">
               You agree to our friendly{" "}
               <a href="#" className="underline cursor-pointer">
                 privacy policy
