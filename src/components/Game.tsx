@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import hearth_r from "../img/hearth_r.png";
 import hearth_g from "../img/hearth_g.png";
 import chest from "../img/chest.png";
@@ -12,15 +12,17 @@ import Timer from "./Timer";
 import chestCd from "../img/chest_cd.png";
 import chestLocked from "../img/chest_locked.png";
 import chestAllGray from "../img/chest_all_gray.png";
-import Hire from "../components/Hire"
+import Hire from "../components/Hire";
+import { Context, contextType } from "../context/ContextProvider";
 
 const Game = () => {
+  const { diamond } = useContext<contextType>(Context);
   const [isOpen, setIsOpen] = useState(false);
   const [hearth, setHearth] = useState<number[]>([]);
   const [minigameVisible, setMinigameVisible] = useState(false);
   const [gameEnd, setGameEnd] = useState(false);
 
-  const life = 3;
+  const life = 4;
 
   useEffect(() => {
     if (life) {
@@ -97,7 +99,7 @@ const Game = () => {
                   </div>
                 </div>
               )}
-              {minigameVisible && <Dungeon /> }
+              {minigameVisible && <Trouble />}
               {/* 
               METTI IL COMPONENT DEL MINIGIOCO CHE VUOI VISUALIZZARE O RANDOM PER UNO A CASO
               <RandomGame/> <Assaulted /> <Lost /> <Feed /> <Home /> <Dungeon /> <Hire /> <Trouble /> <Assaulted setGameEndProps={setGameEnd} />*/}
@@ -106,7 +108,9 @@ const Game = () => {
           <div className="flex flex-col items-center lg:mt-0 mt-8 w-[416px] h-[450px] lg:w-[450px] lg:h-[416px]">
             <button
               disabled={gameEnd}
-              onClick={() => setMinigameVisible(true)}
+              onClick={() => {
+                setMinigameVisible(true);
+              }}
               className="mt-10 text-black text-3xl bg-[url('../template/button.png')] bg-no-repeat bg-cover w-4/5 hover:bg-[url('../template/button_hover.png')] 
             active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[#101820] mr-3 lg:py-6 py-5 px-10 font-bold font-Modesto"
             >
@@ -120,8 +124,10 @@ const Game = () => {
             {/* <div className="font-bold font-Modesto text-3xl mt-6">Defeat the bandits!</div> */}
             {/* <div className="font-bold font-Modesto text-3xl mt-6">Feed the duck</div> */}
             {/* <div className="font-bold font-Modesto text-3xl mt-6">Choose your way home</div> */}
-            <div className="font-bold font-Modesto text-3xl mt-6">Your duck value: 11 tFIL</div>
-            <img src={chestAllGray} alt="casse" className="mt-10 w-80"/>
+            <div className="font-bold font-Modesto text-3xl mt-6">
+              Your duck value: 18 tFIL
+            </div>
+            <img src={chestAllGray} alt="casse" className="mt-10 w-80" />
             {/* <div className="flex">
               <img
                 src={chestCd}

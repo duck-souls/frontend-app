@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Context, contextType } from "../../context/ContextProvider";
 
 const Assaulted = ({ setGameEndProps }) => {
   const [assaulted, setAssaulted] = useState([0, 0, 0, 1, 1, 1, 1, 1, 1]);
+  const { diamond } = useContext<contextType>(Context);
+
+  const register = async () => {
+    const tx = await diamond.startRegister();
+    await tx.wait();
+  };
 
   const shuffle = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -19,6 +26,7 @@ const Assaulted = ({ setGameEndProps }) => {
     }
     if (!newAssaulted.includes(0)) {
       setGameEndProps(true);
+      register();
     }
   };
 

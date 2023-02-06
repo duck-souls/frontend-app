@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 import { init, useConnectWallet, useSetChain } from "@web3-onboard/react";
 import injectedModule from "@web3-onboard/injected-wallets";
-import abi from "./contractABI.json";
+import abi from "./diamondABI.json";
 import { ethers } from "ethers";
 
 export interface contextType {
   state: boolean;
   toggle: () => void;
   userAddress?: string;
+  diamond?: any;
 }
 
 export const Context = createContext<contextType>({
@@ -119,15 +120,10 @@ const ContextProvider: React.FC<childrenProps> = ({ children }) => {
   }, [connectedChain, signer, wallet, userAddress]);
 
   return (
-    <Context.Provider value={{ state, toggle, userAddress }}>
+    <Context.Provider value={{ state, toggle, userAddress, diamond }}>
       {children}
     </Context.Provider>
   );
 };
 
 export default ContextProvider;
-
-// const register = async () => {
-//   const tx = await diamond.startRegister();
-//   await tx.wait();
-// };

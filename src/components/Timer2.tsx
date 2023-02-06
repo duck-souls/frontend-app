@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 const Timer2 = () => {
-  const [time, setTime] = useState( 60);
+  const [time, setTime] = useState(2 * 60 * 60);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTime(prevTime => {
+      setTime((prevTime) => {
         if (prevTime === 0) {
           clearInterval(intervalId);
           return 0;
