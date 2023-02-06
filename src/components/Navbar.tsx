@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import duck from "../img/duck_icon.png";
 import { contextType, Context } from "../context/ContextProvider";
 import { useContext } from "react";
+import { useConnectWallet } from "@web3-onboard/react";
 
 const Navbar: React.FC = () => {
   const [clicked, setClicked] = useState(false);
-  const { state, toggle } = useContext<contextType>(Context);
+  const { state, toggle, userAddress } = useContext<contextType>(Context);
+  const [_, connect, disconnect] = useConnectWallet();
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -18,6 +20,10 @@ const Navbar: React.FC = () => {
     if (window.innerWidth > 640) {
       setClicked(false);
     }
+  };
+
+  const formatAddress = (address: string) => {
+    return address.substring(0, 5) + "..." + address.substring(39);
   };
 
   useEffect(() => {
@@ -67,6 +73,12 @@ const Navbar: React.FC = () => {
               clicked ? "fas fa-times" : "fas fa-bars"
             }`}
           ></i>
+        </div>
+        <div
+          onClick={() => connect()}
+          className="bg-gradient-to-tr from-brand-lightBlue to-brand-lightCyan uppercase text-white font-semibold px-6 py-2 rounded-xl cursor-pointer hover:opacity-90"
+        >
+          {userAddress ? formatAddress(userAddress) : "Connect"}
         </div>
       </nav>
     </>
