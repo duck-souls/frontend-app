@@ -1,5 +1,6 @@
 import { useState } from "react";
 import duck from "../img/duck_char.png";
+import ghost from "../img/ghost_char.png";
 import ItemsList from "../utils/ItemsList";
 
 const Home = () => {
@@ -52,7 +53,7 @@ const Home = () => {
             />
             <img
               className="mt-2 hover:scale-125"
-              src={ItemsList.iron?.armor.tier2.image}
+              src={ItemsList.mithril?.armor.tier2.image}
               onClick={armorShow}
             />
           </div>
@@ -70,9 +71,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-[290px] h-[80px] bg-[url('../template/text_button.png')] mt-10">
-        {/* <div className="text-center text-black text-3xl font-Modesto>Home sweet home</div> */}
-        <div className="text-center text-black text-3xl font-Modesto">
+      <div className="relative w-[290px] h-[80px] bg-[url('../template/text_button.png')] mt-10">
+    {/*   <div className="text-center text-black text-3xl font-Modesto">Home sweet home</div> */}
+  
+    {/* <div className="absolute top-4 right-5 bg-[url('../template/button_accept.png')] bg-cover h-[45px] w-[45px] cursor-pointer hover:scale-125"></div> */}
+        <div className="text-center text-black text-3xl font-Modesto cursor-pointer">
           {displayHelm && (
             <div>
               <div>{ItemsList.mithril?.helm.tier1.name}</div>
@@ -81,8 +84,8 @@ const Home = () => {
           )}
           {displayArmor && (
             <div>
-              <div>{ItemsList.iron?.armor.tier2.name}</div>
-              <div>{ItemsList.iron?.armor.tier2.rarity}</div>
+              <div>{ItemsList.mithril?.armor.tier2.name}</div>
+              <div>{ItemsList.mithril?.armor.tier2.rarity}</div>
             </div>
           )}
           {displayWeapon && (

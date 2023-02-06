@@ -28,13 +28,13 @@ const Landing = (props) => {
             control a duck character.<br />The objective of the player is to keep
             their character alive accepting daily mini-games known as
             "troubles."<br />The character is based on a smart contract with a base
-            value in ETH that can be increased by accpeting these troubles.<br />The
+            value in tFIL that can be increased by accepting these troubles.<br />The
             character has five hearts and when all hearts are lost, the
             character dies and becomes a ghost losing half of its value when it
             was alive.<br />The player can resurrect the character by paying its base
             value, which increases its value to the original value plus the ghost value.
             The user has two hours to accept the trouble, otherwise a heart is lost.<br />
-            The character's value can be sold at any time for ETH.<br />
+            The character's value can be sold at any time for tFIL.<br />
             A fee is taken from transactions to create loot, which is
             used to increase monthly the value of characters alive at that time
             and add a random bonus to the dungeon entrance.<br />Active players can

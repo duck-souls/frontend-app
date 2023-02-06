@@ -25,7 +25,7 @@ export const teamMembers = [
     role: "Fullstack Developer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
-    contact: "https://www.linkedin.com/in/ivonna-maturell-montalvo-a4aa8123a/",
+    contact: "https://www.linkedin.com",
   },
   {
     name: "Patrizio",
@@ -33,14 +33,14 @@ export const teamMembers = [
     role: "Frontend Developer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
-    contact: "https://www.linkedin.com/in/ivonna-maturell-montalvo-a4aa8123a/",
+    contact: "https://www.linkedin.com/in/patrizio-vela-425310265/",
   },
   {
-    name: "Soehnle",
+    name: "Gabriele",
     img: lupo,
     role: "Frontend Developer",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec ullamcorper tortor, quis pulvinar massa.",
-    contact: "https://www.linkedin.com/in/ivonna-maturell-montalvo-a4aa8123a/",
+    contact: "https://www.linkedin.com/",
   },
 ];
