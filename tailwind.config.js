@@ -15,6 +15,14 @@ module.exports = {
           "70%": { transform: "rotateY(180deg)" },
           "100%": { transform: "translateX(0px)" },
         },
+        beat: {
+          "0%": { transform: "scale(1)" },
+          "14%": { transform: "scale(1.1)" },
+          "28%": { transform: "scale(1)" },
+          "42%": { transform: "scale(1.1)" },
+          "70%": { transform: "scale(1)" },
+
+        }
       },
     },
     plugins: [],

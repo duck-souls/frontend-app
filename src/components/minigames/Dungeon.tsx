@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import duck from "../../img/duck_char.png";
 import boss from "../../img/bat_idle.gif";
-import bossDeath from "../../img/bat_death.gif";
+/* import bossDeath from "../../img/bat_death.gif"; */
 import Home from "../Home";
 import chest from "../../img/dungeon_chest.png";
 
@@ -52,11 +52,6 @@ const Dungeon = () => {
     }
   }, [attack]);
 
-  /*  - fixare time out il mostro si può attaccare sempre, magari disabilitare il click durante il timeout
-      - aggiungere timeout appena uno dei due personaggi vince, si va troppo velocemente nella schermata finale (mode = "playAgain")
-        e spesso non si fa in tempo a vedere le barre della vita scendere dell'ultimo attacco
-   */
-
   const handleClick = useCallback(
     (x: any) => {
       if (!attack) return;
@@ -80,41 +75,6 @@ const Dungeon = () => {
     checkWinner();
   }, [progressBarDuck, progressBarArdv]);
 
-  /*  const endGame = () => {
-    if (mode === "playAgain") {
-      return (
-          <div className="relative bg-[url('../template/background_minigame_dungeon_chest.png')] mx-auto -mt-2 -ml-2 p-2 bg-cover h-[310px] w-[310px]">
-            <div className="text-white ml-20">{displayWinner()}</div>
-            <div className="">
-              {chestDrop && (
-                <div>
-                  <img
-                    className="absolute bottom-14 left-36 cursor-pointer"
-                    src={chest}
-                  />
-                  <img
-                    onClick={() => setMode("home")}
-                    className="absolute bottom-14 left-36 animate-ping cursor-pointer"
-                    src={chest}
-                  />
-                </div>
-              )}
-              <img
-                src={duck}
-                className={`absolute w-[80px] h-[110px] bottom-5 left-16 ${
-                  chestDrop ? "animate-bounce" : "animate-[walk_11s_infinite]"
-                }`}
-              ></img>
-            </div>
-          </div>
-      )
-    }
-  };
-
-  const youLoose = () => {
-    mode === "Enemy" && <div className="relative bg-[url('../template/background_minigame_feed.png')] mx-auto -mt-2 -ml-2 p-2 bg-cover h-[310px] w-[310px]"></div>
-  };
- */
   return (
     <div
       className={`w-[310px] h-[310px] mx-auto mt-4 p-2 bg-cover ${
@@ -126,7 +86,7 @@ const Dungeon = () => {
       {mode === "start" && (
         <div className="mt-8">
           <div className="text-white text-center font-Modesto text-4xl font-bold">
-            Dungeon level HARD
+            Dungeon level EASY
           </div>
           <div className="text-white text-center font-Modesto text-4xl font-bold mt-2">
             Are you sure?
