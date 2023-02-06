@@ -9,7 +9,7 @@ const AboutUs = () => {
       id="about-us-section"
       className="bg-gradient-to-r from-[#F4E9D9] to-[#AA895E] bg-no-repeat bg-cover z-[1]"
     >
-      <h1 className="text-center text-2xl font-black shadow-xl p-2 text-[black]">
+      <h1 className="text-center text-3xl font-black shadow-xl p-2 text-[black] font-Modesto">
         Our Team Members
       </h1>
       {teamMembers.map((element, index) => {
@@ -33,14 +33,13 @@ const AboutUs = () => {
                   : "ml-4 mt-5 md:w-4/12 md:h-fit"
               }md:w-6/12 w-60 h-fit p-6 border border-black-700 rounded-lg bg-white shadow-[0_35px_60px_-10px_rgba(0,0,0,0.4)] ml-6 hover:scale-110 `}
             >
-              <h3 className="font-bold text-2xl">{name}</h3>
-              <h6 className="font-semibold">{role}</h6>
-              <p className="text-center text-sm">{description}</p>
+              <h3 className="font-bold text-2xl font-Modesto">{name}</h3>
+              <h6 className="font-black text-lg font-Modesto">{role}</h6>
               <a
                 href={contact}
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-700 hover:text-blue-400 text-sm"
+                className="text-blue-700 hover:text-blue-400 text-sm font-Gothic"
               >
                 contact me...
               </a>
@@ -50,15 +49,15 @@ const AboutUs = () => {
       })}
       <div className=""></div>
       <div className={`flex flex-1 justify-center ${contactUs ? "opacity-5" : null}`}>
-        <h3 className="text-center text-2xl mb-3 mt-5 font-semibold text-[white]">
+        <h3 className="text-center text-2xl mb-3 mt-5 font-semibold text-[white] font-Modesto">
           Questions?
         </h3>
-        <button
+        <div
           onClick={() => setContactUs(true)}
-          className="text-xl ml-2.5 font-medium text-white mt-5 hover:text-black  hover:bg-[#F4E9D9] bg-[#AA895E] h-9 px-3 rounded-full transition-all cursor-pointer border-b-4 hover:border-[#AA895E] active:translate-y-[5px]"
+          className="bg-[url('../template/text_button.png')] bg-contain bg-no-repeat text-xl ml-2.5 text-white mt-6 w-28 text-center  hover:text-black hover:w-32 hover:bg-[url('../template/button_hover.png')] h-9 px-3 cursor-pointer font-Modesto"
         >
          Contact Us
-        </button>
+        </div>
       </div>
    {contactUs ? <ContactForm setContactUs={setContactUs} /> : null}
     </div>

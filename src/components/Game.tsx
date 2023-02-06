@@ -12,6 +12,7 @@ import Timer from "./Timer";
 import chestCd from "../img/chest_cd.png";
 import chestLocked from "../img/chest_locked.png";
 import chestAllGray from "../img/chest_all_gray.png";
+import Hire from "../components/Hire"
 
 const Game = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,6 @@ const Game = () => {
       <Assaulted setGameEndProps={setGameEnd} />,
       <Feed setGameEndProps={setGameEnd} />,
       <Lost setGameEndProps={setGameEnd} />,
-      <Home />,
       <Dungeon />,
     ];
     const randomIndex = Math.floor(Math.random() * componentsArray.length);
@@ -64,7 +64,7 @@ const Game = () => {
         <div className="lg:flex lg:h-[416px] lg:w-[900px] lg:bg-[url('../template/background_app_desktop.png')] h-[900px] w-[416px] bg-[url('../template/background_app_mobile.png')] bg-cover">
           <div className="w-[416px] h-[450px] lg:w-[450px] lg:h-[416px]">
             <div className="flex items-center mt-1">
-              <div className="text-2xl font-bold mt-3 ml-5 lg:ml-9 ">lvl1</div>
+              <div className="text-2xl font-bold mt-3 ml-5 lg:ml-9">lvl1</div>
 
               <div className="mt-3 ml-3 mr-8 flex mt-3">
                 {hearth.map((hearth, i) => (
@@ -97,10 +97,10 @@ const Game = () => {
                   </div>
                 </div>
               )}
-              {minigameVisible &&  <Trouble /> }
+              {minigameVisible && <Dungeon /> }
               {/* 
               METTI IL COMPONENT DEL MINIGIOCO CHE VUOI VISUALIZZARE O RANDOM PER UNO A CASO
-              <RandomGame/> <Assaulted /> <Lost /> <Feed /> <DragDrop /> <Home /> <Dungeon /> <Trouble />*/}
+              <RandomGame/> <Assaulted /> <Lost /> <Feed /> <Home /> <Dungeon /> <Hire /> <Trouble /> <Assaulted setGameEndProps={setGameEnd} />*/}
             </div>
           </div>
           <div className="flex flex-col items-center lg:mt-0 mt-8 w-[416px] h-[450px] lg:w-[450px] lg:h-[416px]">
@@ -110,23 +110,30 @@ const Game = () => {
               className="mt-10 text-black text-3xl bg-[url('../template/button.png')] bg-no-repeat bg-cover w-4/5 hover:bg-[url('../template/button_hover.png')] 
             active:text-[#FFF068] active:bg-[url('../template/button_clicked.png')] hover:text-[#101820] mr-3 lg:py-6 py-5 px-10 font-bold font-Modesto"
             >
-             {!gameEnd ? "Looking for TROUBLE - 3 / 5" : "Looking for TROUBLE - 3 / 5"} 
+              {!gameEnd
+                ? "Looking for TROUBLE - 3 / 5"
+                : "Looking for TROUBLE - 3 / 5"}
             </button>
-           <div className="font-bold font-Modesto text-3xl mt-6">Here's a TROUBLE! tap or die..</div>
-           {/* <div className="font-bold font-Modesto text-3xl mt-6">Defeat the bandits!</div> */}
-           {/* <div className="font-bold font-Modesto text-3xl mt-6">Feed the duck</div> */}
-           {/* <div className="font-bold font-Modesto text-3xl mt-6">Choose your way home</div> */}
-           {/* <div className="font-bold font-Modesto text-3xl mt-6">Your duck value: 0.008 Eth</div> */}
-           {/*  <img src={chestAllGray} alt="casse" className="mt-24 w-80"/> */}
-           <div className="flex">
-            <img src={chestCd} alt="casse" className="mt-8 h-32 w-36 mt-3 mr-2 -ml-3 animate-[beat_1s_infinite] cursor-pointer"/>
-            <img src={chestLocked} alt="casse" className="mt-14 h-20 w-50" />
-    
-            </div>
-            <div className="text-2xl font-Modesto mr-52">
-            <Timer />  {/* <div>Open it!</div> */}
-            </div> 
+            {/* <div className="font-bold font-Modesto text-3xl mt-6">
+              Here's a TROUBLE! tap or die..
+            </div> */}
+            {/* <div className="font-bold font-Modesto text-3xl mt-6">Defeat the bandits!</div> */}
+            {/* <div className="font-bold font-Modesto text-3xl mt-6">Feed the duck</div> */}
+            {/* <div className="font-bold font-Modesto text-3xl mt-6">Choose your way home</div> */}
+            <div className="font-bold font-Modesto text-3xl mt-6">Your duck value: 11 tFIL</div>
+            <img src={chestAllGray} alt="casse" className="mt-10 w-80"/>
+            {/* <div className="flex">
+              <img
+                src={chestCd}
+                alt="casse"
+                className="mt-8 h-32 w-36 mt-3 mr-2 -ml-3 animate-[beat_1s_infinite] cursor-pointer"
+              />
             
+              <img src={chestLocked} alt="casse" className="mt-14 h-20 w-50" />
+            </div>
+          <div className="text-2xl font-Modesto mr-52">
+             <Timer />   <div>Open it!</div>  
+            </div>  */}
           </div>
         </div>
       ) : (
