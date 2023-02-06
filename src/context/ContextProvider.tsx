@@ -22,14 +22,14 @@ interface childrenProps {
 
 const CONTRACT_ADDRESS = "0x9473c284b40710c08D73f67bd346554620B7103c";
 
-const rpcUrl = "https://api.hyperspace.node.glif.io/rpc/v1";
+const rpcUrl = "https://filecoin-hyperspace.chainstacklabs.com/rpc/v1";
 const injected = injectedModule();
 
 init({
   wallets: [injected],
   chains: [
     {
-      id: "0x3141",
+      id: "3141",
       token: "tFIL",
       label: "Filecoin Hyperspace",
       rpcUrl,
@@ -78,11 +78,21 @@ const ContextProvider: React.FC<childrenProps> = ({ children }) => {
   }, [provider]);
 
   useEffect(() => {
-    if (!signer || connectedChain?.id !== "0x3141") return;
+    if (!signer || connectedChain?.id !== "3141") return;
     const diamond = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
 
     setDiamond(diamond);
   }, [signer, connectedChain]);
+
+  useEffect(() => {
+    if ((wallet || signer || userAddress) && connectedChain?.id !== "3141") {
+      try {
+        setChain({ chainId: "3141" });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }, [connectedChain, signer, wallet, userAddress]);
 
   return (
     <Context.Provider value={{ state, toggle, userAddress }}>
